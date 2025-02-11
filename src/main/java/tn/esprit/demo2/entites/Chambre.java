@@ -1,8 +1,15 @@
 package tn.esprit.demo2.entites;
 import jakarta.persistence.*;
-import java.util.Date;
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Chambre {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChambre;
@@ -11,11 +18,8 @@ public class Chambre {
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 
-    @ManyToOne
-    @JoinColumn(name = "bloc_id")
-    private Bloc bloc;
 
-    @OneToMany(mappedBy = "chambre")
-    private List<Reservation> reservations;
+
+
 }
 
