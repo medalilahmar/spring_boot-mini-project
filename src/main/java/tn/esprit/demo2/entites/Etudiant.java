@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,4 +23,7 @@ public class Etudiant {
     private Date dateNaissance;
 
 
+
+    @OneToMany(mappedBy = "etudiant")
+    private Set<Reservation> reservation ;
 }

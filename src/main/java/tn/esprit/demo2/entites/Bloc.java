@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 
 @Entity
 @Getter
@@ -16,6 +18,14 @@ public class Bloc {
     private Long idBloc;
     private String nomBloc;
     private Long capaciteBloc;
+
+
+    @ManyToOne
+   private Foyer foyer;
+
+    @OneToMany(mappedBy = "bloc")
+    private Set<Chambre> chambres;
+
 
 
 }

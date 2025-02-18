@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -19,5 +20,13 @@ public class Reservation {
     private Date anneeUniversitaire;
     private boolean estValide;
 
+
+
+
+    @ManyToOne
+    private Etudiant etudiant;
+
+    @ManyToMany
+    private Set<Etudiant> etudiants;
 
 }

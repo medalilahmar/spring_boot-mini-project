@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -18,7 +20,11 @@ public class Chambre {
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 
+    @ManyToOne
+    private Bloc bloc;
 
+    @OneToMany
+    private Set<Reservation> reservations;
 
 
 }

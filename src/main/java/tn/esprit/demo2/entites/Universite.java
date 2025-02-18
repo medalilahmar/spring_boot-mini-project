@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
 public class Universite {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUniversite;
@@ -20,4 +21,6 @@ public class Universite {
 
 
 
+    @OneToOne
+    private Foyer foyer;
 }
