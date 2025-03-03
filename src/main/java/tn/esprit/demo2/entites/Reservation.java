@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 
@@ -16,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class Reservation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idReservation;
+    private Long  idReservation;
     private Date anneeUniversitaire;
     private boolean estValide;
 
@@ -27,6 +28,6 @@ public class Reservation {
     private Etudiant etudiant;
 
     @ManyToMany
-    private Set<Etudiant> etudiants;
+    private List<Etudiant> etudiants;
 
 }
