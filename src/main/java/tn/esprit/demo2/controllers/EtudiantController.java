@@ -38,4 +38,10 @@ public class EtudiantController {
     public void removeEtudiant(@PathVariable("id") Long id){
         etudiantService.removeEtudiant(id);
     }
+
+
+    @GetMapping("/ecole/{ecole}")
+    public List<Etudiant> getEtudiantsByEcole(@PathVariable String ecole) {
+        return etudiantService.getEtudiantsByEcole(ecole);
+    }
 }

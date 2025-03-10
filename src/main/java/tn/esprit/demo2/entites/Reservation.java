@@ -22,7 +22,9 @@ public class Reservation {
     private boolean estValide;
 
 
-
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idChambre")
+    private Chambre chambre;
 
     @ManyToOne
     private Etudiant etudiant;

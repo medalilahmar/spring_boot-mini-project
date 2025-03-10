@@ -37,4 +37,10 @@ public class EtudiantService implements IEtudiantService {
     public void removeEtudiant(Long idEtudiant) {
         etudiantRepository.deleteById(idEtudiant);
     }
+
+    @Override
+
+    public List<Etudiant> getEtudiantsByEcole(String ecole) {
+        return etudiantRepository.findByEcole(ecole);
+    }
 }

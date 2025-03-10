@@ -3,6 +3,7 @@ package tn.esprit.demo2.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.demo2.entites.Chambre;
+import tn.esprit.demo2.entites.TypeChambre;
 import tn.esprit.demo2.services.IChambreService;
 
 import java.util.List;
@@ -33,4 +34,17 @@ public class ChambreController {
         public Chambre getChambre(@PathVariable("id") Long id) {
             return chambreService.retrieveChambre(id);
         }
+
+
+    @GetMapping("/nonReservees")
+    public List<Chambre> getChambresNonReservees(@RequestParam String nomUniversite,
+                                                 @RequestParam TypeChambre type) {
+        return chambreService.getChambresNonReserveParNomUniversiteEtTypeChambre(nomUniversite, type);
+    }
+
+    @GetMapping("/parBloc")
+    public List<Chambre> getChambresParBlocEtType(@RequestParam long idBloc,
+                                                  @RequestParam TypeChambre typeC) {
+        return chambreService.getChambresParBlocEtType(idBloc, typeC);
+    }
     }

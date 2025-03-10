@@ -10,4 +10,8 @@ public interface IEtudiantService {
     public Etudiant updateEtudiant(Etudiant e);
     public Etudiant retrieveEtudiant(Long idEtudiant);
     public void removeEtudiant(Long idEtudiant);
+
+    public List<Etudiant> getEtudiantsByEcole(String ecole);
+
+
 }

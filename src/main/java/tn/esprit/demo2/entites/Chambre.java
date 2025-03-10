@@ -21,10 +21,13 @@ public class Chambre {
     private TypeChambre typeC;
 
     @ManyToOne
+    @JoinColumn(name = "idBloc")
     private Bloc bloc;
 
     @OneToMany
     private Set<Reservation> reservations;
+
+
 
 
 }
