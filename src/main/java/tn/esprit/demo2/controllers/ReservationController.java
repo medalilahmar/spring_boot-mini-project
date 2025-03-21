@@ -12,6 +12,8 @@ import java.util.List;
 @RequestMapping("/reservation")
 public class ReservationController {
 
+    @Autowired
+
     IReservationService reservationService;
 
     @GetMapping("/get-all")
@@ -33,4 +35,12 @@ public class ReservationController {
                                                      @RequestParam String nomUniversite) {
         return reservationService.getReservationParAnneeUniversitaireEtNomUniversite(anneeUniversitaire, nomUniversite);
     }
+
+
+    @PostMapping("/ajouterReservation/{idBloc}/{cinEtudiant}")
+    public Reservation ajouterReservation(@PathVariable long idBloc,
+                                          @PathVariable long cinEtudiant) {
+        return reservationService.ajouterReservation(idBloc, cinEtudiant);
+    }
+
 }

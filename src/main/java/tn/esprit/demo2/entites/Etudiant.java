@@ -22,6 +22,8 @@ public class Etudiant {
     private String ecole;
     private Date dateNaissance;
 
+    @Version
+    private Long version;
 
 
     @OneToMany(mappedBy = "etudiant")

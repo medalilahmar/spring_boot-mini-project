@@ -15,4 +15,9 @@ public interface IEtudiantRepository extends JpaRepository<Etudiant, Long> {
     @Query("SELECT e FROM Etudiant e WHERE e.ecole = :ecole")
     List<Etudiant> findByEcole(@Param("ecole") String ecole);
 
+
+
+    Etudiant findByCin(Long cin);
+
+
 }

@@ -16,4 +16,7 @@ public interface IChambreService {
     public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC);
    public  List<Chambre> getChambresParBlocEtTypeKeyword(long idBloc, TypeChambre typeC);
 
+
+
+
 }

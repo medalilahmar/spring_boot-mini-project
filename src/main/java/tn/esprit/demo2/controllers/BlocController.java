@@ -39,4 +39,13 @@ public class BlocController  {
         blocService.removeBloc(id);
     }
 
+
+    @PutMapping("/affecterChambres/{idBloc}")
+    public Bloc affecterChambresABloc(@RequestBody List<Long> numChambre,
+                                      @PathVariable("idBloc") long idBloc) {
+        return blocService.affecterChambresABloc(numChambre, idBloc);
+    }
+
+
+
 }

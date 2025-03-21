@@ -1,7 +1,6 @@
 package tn.esprit.demo2.controllers;
 
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.demo2.entites.Foyer;
@@ -41,5 +40,13 @@ public class FoyerController {
     public void removeFoyer(@PathVariable("id") Long id){
         foyerService.removeFoyer(id);
     }
+
+
+    @PostMapping("/ajouterEtAffecter/{idUniversite}")
+    public Foyer ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer foyer,
+                                                   @PathVariable("idUniversite") long idUniversite) {
+        return foyerService.ajouterFoyerEtAffecterAUniversite(foyer, idUniversite);
+    }
+
 
 }

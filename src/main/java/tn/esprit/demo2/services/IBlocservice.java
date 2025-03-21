@@ -12,4 +12,7 @@ public interface IBlocservice {
     Bloc addBloc(Bloc bloc);
     Bloc retrieveBloc(Long idBloc);
     void removeBloc(Long idBloc);
+
+    Bloc affecterChambresABloc(List<Long> numChambre, long idBloc);
+
 }

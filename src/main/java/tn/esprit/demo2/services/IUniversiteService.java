@@ -3,6 +3,7 @@ package tn.esprit.demo2.services;
 import tn.esprit.demo2.entites.Universite;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IUniversiteService {
 
@@ -12,4 +13,10 @@ public interface IUniversiteService {
     public Universite retrieveUniversite(Long idUniversite);
 
     public Universite updateUniversite(Universite u);
+
+    public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite);
+
+
+    public Universite desaffecterFoyerAUniversite(long idUniversite);
+
 }

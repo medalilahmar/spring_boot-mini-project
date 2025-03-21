@@ -1,15 +1,19 @@
 package tn.esprit.demo2.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.demo2.entites.Universite;
 import tn.esprit.demo2.services.IUniversiteService;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/universites")
 public class UniversiteController {
 
     @Autowired
+
     IUniversiteService universiteService;
 
     @PostMapping("/add-universite")
@@ -32,4 +36,20 @@ public class UniversiteController {
     {
         return universiteService.retrieveUniversite(id);
     }
+
+
+    @PutMapping("/affecterFoyer/{idFoyer}/{nomUniversite}")
+    public Universite affecterFoyerAUniversite(@PathVariable long idFoyer,
+                                               @PathVariable String nomUniversite) {
+        return universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+
+    @PutMapping("/desaffecterFoyer/{idUniversite}")
+    public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
+        return universiteService.desaffecterFoyerAUniversite(idUniversite);
+    }
+
+
+
 }

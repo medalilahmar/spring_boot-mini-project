@@ -20,7 +20,45 @@ public class Foyer {
     private String nomFoyer;
     private Long capaciteFoyer;
 
+    public Long getIdFoyer() {
+        return idFoyer;
+    }
 
+    public void setIdFoyer(Long idFoyer) {
+        this.idFoyer = idFoyer;
+    }
+
+    public String getNomFoyer() {
+        return nomFoyer;
+    }
+
+    public void setNomFoyer(String nomFoyer) {
+        this.nomFoyer = nomFoyer;
+    }
+
+    public Long getCapaciteFoyer() {
+        return capaciteFoyer;
+    }
+
+    public void setCapaciteFoyer(Long capaciteFoyer) {
+        this.capaciteFoyer = capaciteFoyer;
+    }
+
+    public Universite getUniversite() {
+        return universite;
+    }
+
+    public void setUniversite(Universite universite) {
+        this.universite = universite;
+    }
+
+    public List<Bloc> getBloc() {
+        return bloc;
+    }
+
+    public void setBloc(List<Bloc> bloc) {
+        this.bloc = bloc;
+    }
 
     @OneToOne(mappedBy = "foyer")
     private Universite universite;

@@ -31,4 +31,6 @@ public interface IChambreRepository  extends CrudRepository<Chambre, Long> {
     List<Chambre> findByBloc_IdBlocAndTypeC(long idBloc, TypeChambre typeC);
 
 
+    List<Chambre> findAllById(Iterable<Long> ids);
+
 }

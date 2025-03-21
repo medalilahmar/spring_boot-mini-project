@@ -8,4 +8,5 @@ import tn.esprit.demo2.entites.Bloc;
 public interface IBlocRepository extends CrudRepository<Bloc, Long> {
 
 
+
 }

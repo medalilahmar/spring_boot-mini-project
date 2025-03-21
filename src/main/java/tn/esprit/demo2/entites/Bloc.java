@@ -30,6 +30,51 @@ public class Bloc {
     @OneToMany(mappedBy = "bloc")
     private Set<Chambre> chambres;
 
+    public Long getIdBloc() {
+        return idBloc;
+    }
 
+    public void setIdBloc(Long idBloc) {
+        this.idBloc = idBloc;
+    }
 
+    public String getNomBloc() {
+        return nomBloc;
+    }
+
+    public void setNomBloc(String nomBloc) {
+        this.nomBloc = nomBloc;
+    }
+
+    public Long getCapaciteBloc() {
+        return capaciteBloc;
+    }
+
+    public void setCapaciteBloc(Long capaciteBloc) {
+        this.capaciteBloc = capaciteBloc;
+    }
+
+    public Universite getUniversite() {
+        return universite;
+    }
+
+    public void setUniversite(Universite universite) {
+        this.universite = universite;
+    }
+
+    public Foyer getFoyer() {
+        return foyer;
+    }
+
+    public void setFoyer(Foyer foyer) {
+        this.foyer = foyer;
+    }
+
+    public Set<Chambre> getChambres() {
+        return chambres;
+    }
+
+    public void setChambres(Set<Chambre> chambres) {
+        this.chambres = chambres;
+    }
 }
